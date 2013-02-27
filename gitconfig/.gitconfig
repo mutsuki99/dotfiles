@@ -1,0 +1,21 @@
+[user]
+    #email = 
+    #name = 
+
+[alias]
+    br = branch
+    ci = commit
+    cia = commit -a
+    co = checkout
+#    gp = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %s\" --all --date=short
+    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+    pl = pull
+    ps = push
+    st = status
+
+[core]
+    autocrlf = false
+    excludesfile = ~/.gitignore
+    #pager = vimpager
+    quotepath = false
+
