@@ -1,0 +1,19 @@
+# list the possibilities after an ambiguous completion
+#
+set show-all-if-ambiguous on
+
+# ignore case.
+#
+set completion-ignore-case on
+
+# stop the beep
+#
+set bell-style none
+
+# historical backward search with linehead string binded to up-key
+#
+"\C-p": history-search-backward
+
+# historical forward search with linehead string binded to down-key
+#
+"\C-n": history-search-forward
