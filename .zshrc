@@ -17,14 +17,9 @@ if [ "$TERM" = "screen" -a "x$SHLVL" = "x1" ]; then
     unset i
 fi
 
-autoload -U compinit
-if [ "$OSTYPE" = "cygwin" ]; then
-    compinit -u
-else
-    compinit
-fi
-
 # PROMPT
+autoload -U colors
+colors
 case ${UID} in
 0)
     PROMPT="%B%{${fg[red]}%}[$USER@%M:%{${fg[cyan]}%}%~%{${fg[red]}%}]"$'\n'"#%{${reset_color}%}%b "
@@ -73,6 +68,12 @@ screen)
     ;;
 esac
 
+autoload -U compinit
+if [ "$OSTYPE" = "cygwin" ]; then
+    compinit -u
+else
+    compinit
+fi
 
 #allow tab completion in the middle of a word
 setopt COMPLETE_IN_WORD
@@ -96,9 +97,6 @@ setopt COMPLETE_IN_WORD
 
 ## disable mail checking
 #MAILCHECK=0
-
-autoload -U colors
-colors
 
 setopt auto_cd pushd_ignore_dups hist_ignore_space
 setopt auto_list auto_pushd extended_glob
