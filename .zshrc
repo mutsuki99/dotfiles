@@ -239,6 +239,11 @@ if which vimpager > /dev/null 2>&1; then
 fi
 export TIME_STYLE=long-iso
 
+# tmux settings
+if which tmux > /dev/null 2>&1; then
+    alias tmux='tmux -2'
+fi
+
 # load local functions
 if [ -r ~/.functions ]; then
     source ~/.functions
