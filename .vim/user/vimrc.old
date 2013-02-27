@@ -1,0 +1,161 @@
+"--------------------------------
+"-- Japanese language settings --
+"--------------------------------
+"-- add auto detect encode --
+if &encoding !=# 'utf-8'
+  set encoding=japan
+  set fileencoding=japan
+endif
+if has('iconv')
+  let s:enc_euc = 'euc-jp'
+  let s:enc_jis = 'iso-2022-jp'
+  " iconvがeucJP-msに対応しているかをチェック
+  if iconv("\x87\x64\x87\x6a", 'cp932', 'eucjp-ms') ==# "\xad\xc5\xad\xcb"
+    let s:enc_euc = 'eucjp-ms'
+    let s:enc_jis = 'iso-2022-jp-3'
+  " iconvがJISX0213に対応しているかをチェック
+  elseif iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==# "\xad\xc5\xad\xcb"
+    let s:enc_euc = 'euc-jisx0213'
+    let s:enc_jis = 'iso-2022-jp-3'
+  endif
+  " fileencodingsを構築
+  if &encoding ==# 'utf-8'
+    let s:fileencodings_default = &fileencodings
+    let &fileencodings = s:enc_jis .','. s:enc_euc .',cp932'
+    let &fileencodings = &fileencodings .','. s:fileencodings_default
+    unlet s:fileencodings_default
+  else
+    let &fileencodings = &fileencodings .','. s:enc_jis
+    set fileencodings+=utf-8,ucs-2le,ucs-2
+    if &encoding =~# '^\(euc-jp\|euc-jisx0213\|eucjp-ms\)$'
+      set fileencodings+=cp932
+      set fileencodings-=euc-jp
+      set fileencodings-=euc-jisx0213
+      set fileencodings-=eucjp-ms
+      let &encoding = s:enc_euc
+      let &fileencoding = s:enc_euc
+    else
+      let &fileencodings = &fileencodings .','. s:enc_euc
+    endif
+  endif
+  " 定数を処分
+  unlet s:enc_euc
+  unlet s:enc_jis
+endif
+
+" 日本語を含まない場合は fileencoding に encoding を使うようにする
+if has('autocmd')
+  function! AU_ReCheck_FENC()
+    if &fileencoding =~# 'iso-2022-jp' && search("[^\x01-\x7e]", 'n') == 0
+      let &fileencoding=&encoding
+    endif
+  endfunction
+  autocmd BufReadPost * call AU_ReCheck_FENC()
+endif
+
+" 改行コードの自動認識
+set fileformats=unix,dos,mac
+" □とか○の文字があってもカーソル位置がずれないようにする
+if exists('&ambiwidth')
+  set ambiwidth=double
+endif
+
+"------------------------
+"-- vim basic settings --
+"------------------------
+set nocompatible
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+set nobackup		" do not keep a backup file, use versions instead
+set history=100000		" keep 50 lines of command line history
+set cwh=20
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+
+"-- set --
+set tw=0
+set ts=4 sw=4 et sts=4
+set ai cindent smartindent
+set ic is hls
+set nobackup
+set wildmenu
+set wildmode=longest:full,full
+set number
+set list
+set listchars=eol:<,tab:>-,trail:_,extends:-,precedes:<
+set tw=0
+if version >= 700
+	set listchars=eol:<,tab:>-,trail:_,extends:-,precedes:<,nbsp:%
+endif
+set laststatus=2
+set statusline=%<===\ %f%(\ ===\ %h%)%(\ ===\ %m%)%(\ ===\ %r%)\ ===%====\ %y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %b(0x%B)\ ===\ %l/%L,%c%V\ ===\ %P\ ===
+set ww=b,s,<,>,[,]
+"set ww=b,s,h,l<,>,[,]
+set virtualedit=block
+set completeopt=menu,preview,longest
+"set mouse=a
+"if &term == "screen"
+"	set ttymouse=xterm2
+"endif
+
+syntax on
+filetype on
+filetype plugin indent on
+
+"-- au --
+" Put these in an autocmd group, so that we can delete them easily.
+augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  "autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
+
+augroup END
+
+if version >= 700
+	au QuickfixCmdPost make,grep,grepadd,vimgrep copen
+	au QuickfixCmdPost l* lopen
+endif
+
+"-- map --
+"map t gt
+"map T gT
+nmap <C-n> :tabe<Space>
+nmap <C-k> :tabe %:h<CR>
+" omni comp key map
+inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X><C-O>"
+inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
+nnoremap g/ :Migemo<CR>
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+"-- command --
+"com -nargs=1 -complete=file Te :tabe <args>
+" Insert <Tab> or complete identifier
+" if the cursor is after a keyword character
+
+" Reset tab width.
+com -nargs=1 T :set ts=<args> sts=<args> sw=<args>
+
+"---------------------
+"-- Plugin Settings --
+"---------------------
+"-- closetag.vim --
+:let g:closetag_html_style=1
+au Filetype html,xml,xsl,ant,php runtime macros/closetag.vim
+
+"-- zencoding.vim --
+ let g:user_zen_settings = {
+ \  'indentation' : '    ',
+ \}
+

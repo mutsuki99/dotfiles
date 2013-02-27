@@ -1,0 +1,29 @@
+defencoding utf8
+defescape ^Zz
+escape ^Zz
+startup_message off
+
+#defshell /home/shino/.toast/armed/bin/zsh
+defshell /bin/zsh
+
+vbell off
+caption always "%{= wk} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wb}%m/%d %{=b wb}%c"
+hardstatus string "[%H %n%?: %t%?] %h"
+defscrollback 10000
+
+#bindkey -k [TAB] focus
+#bindkey -k k1 windowlist -b
+bindkey -k k2 prev
+bindkey -k k3 next
+bindkey -k k4 log
+bindkey -k k5 encoding utf8
+bindkey -k k6 encoding euc
+bindkey -k k7 encoding sjis
+
+# Log
+logfile logs/screen/screenlog.%H-%Y%m%d-%c:%s-%n
+#log on
+#deflog on
+
+# 幅勝手に変更が嫌。
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
