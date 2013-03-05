@@ -16,6 +16,8 @@
 [core]
     autocrlf = false
     excludesfile = ~/.gitignore
+    #pager = vimcat
     #pager = vimpager
+    pager = less -R
     quotepath = false
 
