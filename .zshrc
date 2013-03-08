@@ -162,6 +162,7 @@ alias mkdir='mkdir -p'
 if which sudoedit > /dev/null 2>&1; then
     alias se='sudoedit'
 fi
+# Subversion
 if which svn > /dev/null 2>&1; then
     alias svs='svn st'
     alias svc='svn ci'
@@ -171,6 +172,7 @@ if which svn > /dev/null 2>&1; then
     alias svi='svn info'
     alias sva='svn add'
 fi
+# Mercurial
 if which hg > /dev/null 2>&1 ; then
     alias hga='hg add'
     alias hgar='hg addremove'
@@ -186,6 +188,7 @@ if which hg > /dev/null 2>&1 ; then
     alias hgqs='hg qseries -s'
     alias hgr='hg revert'
     alias hgs='hg st'
+    # need root permission
     if which sudo > /dev/null 2>&1; then
         alias shg='sd hg'
         OLDIFS=$IFS
@@ -198,6 +201,7 @@ if which hg > /dev/null 2>&1 ; then
         IFS=$OLDIFS
     fi
 fi
+# Git
 if which git > /dev/null 2>&1 ; then
     alias gipl='git pull'
     alias gips='git push'
@@ -206,11 +210,19 @@ if which git > /dev/null 2>&1 ; then
     alias gia='git add'
     alias gig='git graph'
 fi
+# less.sh
 if which less.sh > /dev/null 2>&1; then
     alias l='less.sh'
 else
     alias l=less
 fi
+# tmux
+if which tmux > /dev/null 2>&1; then
+    alias tmux='tmux -2'
+    alias tmls='tmux ls'
+    alias tmatc='tmux attach -t'
+fi
+
 
 #-------------------------------------------------------------------------------
 # 補完設定追加
@@ -239,22 +251,15 @@ if which vimpager > /dev/null 2>&1; then
 fi
 export TIME_STYLE=long-iso
 
-# tmux settings
-if which tmux > /dev/null 2>&1; then
-    alias tmux='tmux -2'
-    alias tmls='tmux ls'
-    alias tmatc='tmux attach -t'
-fi
-
+#-------------------------------------------------------------------------------
+# local settings
+#-------------------------------------------------------------------------------
 # load local functions
-if [ -r ~/.functions ]; then
-    source ~/.functions
-fi
+[ -d ~/local/zsh/functions ] && fpath=(~/local/zsh/functions $fpath)
+[ -r ~/.zsh.functions ] && source ~/.zsh.functions
 
 # Over write settings
-if [ -r ~/.zshrc.local ]; then
-    source ~/.zshrc.local
-fi
+[ -r ~/.zshrc.local ] && source ~/.zshrc.local
 
 # Load toast
 if [ -d ~/.toast ]; then
