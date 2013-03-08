@@ -10,6 +10,7 @@
 #    gp = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %s\" --all --date=short
     graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
     pl = pull
+    plr = pull --rebase
     ps = push
     st = status
 
@@ -19,5 +20,18 @@
     #pager = vimcat
     #pager = vimpager
     pager = less -R
+    #pager = less.sh
     quotepath = false
 
+[color]
+    branch = auto
+    diff = auto
+    grep = auto
+    interactive = auto
+    pager = true
+    showbranch = auto
+    status = auto
+    ui = auto
+
+[help]
+    autocorrect = 10
