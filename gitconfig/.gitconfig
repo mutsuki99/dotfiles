@@ -10,9 +10,10 @@
 #    gp = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %s\" --all --date=short
     graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
     pl = pull
-    plr = pull --rebase
+    pr = pull --rebase
     ps = push
     st = status
+    sts = status
 
 [core]
     autocrlf = false
