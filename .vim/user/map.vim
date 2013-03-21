@@ -7,6 +7,7 @@ nmap <C-k> :NERDTreeToggle<CR>
 " omni comp key map
 inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X><C-O>"
 inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
+inoremap <Nul> <C-n>
 nnoremap g/ :Migemo<CR>
 
 " Don't use Ex mode, use Q for formatting
