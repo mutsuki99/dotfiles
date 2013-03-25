@@ -1,0 +1,15 @@
+[ui]
+username = 
+verbose = True
+ignore = ~/.hgignore
+merge = diff3
+
+[merge-tools]
+diff3.args = -m -L local -L base -L other $local $base $other > $output
+diff3.checkconflicts = True
+hgmerge.checkconflicts = True
+
+[extensions]
+color =
+hgext.graphlog =
+mq =

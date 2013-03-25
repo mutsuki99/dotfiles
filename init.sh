@@ -23,6 +23,15 @@ function isGitConfigFiles () {
     esac
 }
 
+function isMercurialConfigFiles () {
+  case "$1" in
+    .hgrc|.hgignore)
+      return 0 ;;
+    *)
+      return 1 ;;
+    esac
+}
+
 # main
 cd $(dirname "$0")
 
@@ -53,4 +62,19 @@ for i in $(/bin/ls -dA .*); do
   fi
   cp -a "$PWD/$i" "$HOME/."
 done
+cd ..
+
+# copy hg config
+[ -d hgconfig ] || { echo skip copy hgconfig; exit; }
+cd hgconfig
+for i in $(/bin/ls -dA .*); do
+  isMercurialConfigFiles "$i" || continue
+  echo "copy '$i'."
+  if [ -e "$HOME/$i" ]; then
+    echo "'$HOME/$i' already exists."
+    continue
+  fi
+  cp -a "$PWD/$i" "$HOME/."
+done
+cd ..
 
