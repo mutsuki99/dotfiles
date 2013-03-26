@@ -47,8 +47,13 @@ for i in $(/bin/ls -dA .*); do
 done
 
 # run NeoBundleInstall
-git clone https://github.com/Shougo/neobundle.vim.git "$HOME/.vim/bundle/neobundle.vim"
-which vim > /dev/null 2>&1 && vim +NeoBundleInstall +qa
+neobundle_path="$HOME/.vim/bundle/neobundle.vim"
+if [ ! -e "$neobundle_path" ] ; then
+  git clone https://github.com/Shougo/neobundle.vim.git "$neobundle_path"
+  which vim > /dev/null 2>&1 && vim +NeoBundleInstall +qa
+else
+  echo "'$neobundle_path' already exists."
+fi
 
 # copy git config
 [ -d gitconfig ] || { echo skip copy gitconfig; exit; }
