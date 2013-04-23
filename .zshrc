@@ -159,6 +159,7 @@ alias ctags_php='ctags -R --languages=php --langmap=PHP:.php --php-types=c+i+f+d
 alias ctags_py='ctags -R --languages=python --langmap=Python:.py --python-types=c+m+f --sort=foldcase'
 alias ....='../..'
 alias mkdir='mkdir -p'
+alias vis='sd -E vim'
 if which sudoedit > /dev/null 2>&1; then
     alias se='sudoedit'
 fi
@@ -196,7 +197,7 @@ if which hg > /dev/null 2>&1 ; then
         for i in $(alias|grep '^hg'); do
             src=$(echo $i|cut -d '=' -f 1)
             dist=$(echo $i|cut -d '=' -f 2|tr -d "\'")
-            alias s${src}="sd $dist"
+            alias s${src}="sd -E $dist"
         done
         IFS=$OLDIFS
     fi
