@@ -17,7 +17,28 @@ if [ "$TERM" = "screen" -a "x$SHLVL" = "x1" ]; then
     unset i
 fi
 
+#-------------------------------------------------------------------------------
+# Environment variables
+#-------------------------------------------------------------------------------
+case ${UID} in
+0)
+    export PATH=~/local/bin:~/local/sbin:$PATH
+    ;;
+*)
+    export PATH=~/local/bin:~/local/sbin:/usr/local/sbin:/usr/sbin:/sbin:$PATH
+    ;;
+esac
+export EDITOR=vim
+export LESS="-IM -x 4"
+if which vimpager > /dev/null 2>&1; then
+    export PAGER=vimpager
+fi
+export TIME_STYLE=long-iso
+export TERM=xterm-256color
+
+#-------------------------------------------------------------------------------
 # PROMPT
+#-------------------------------------------------------------------------------
 autoload -U colors
 colors
 case ${UID} in
@@ -68,6 +89,9 @@ screen)
     ;;
 esac
 
+#-------------------------------------------------------------------------------
+# zsh options.
+#-------------------------------------------------------------------------------
 autoload -U compinit
 if [ "$OSTYPE" = "cygwin" ]; then
     compinit -u
@@ -230,28 +254,10 @@ fi
 #-------------------------------------------------------------------------------
 ## compdef
 compdef _sudo sd sdh
+compdef _mercurial hg shg
 # 補完禁止コマンド指定
 #compdef _nothing scp
 #compdef -d scp svnadmin svn
-
-#-------------------------------------------------------------------------------
-# Environment variables
-#-------------------------------------------------------------------------------
-case ${UID} in
-0)
-    export PATH=~/local/bin:~/local/sbin:$PATH
-    ;;
-*)
-    export PATH=~/local/bin:~/local/sbin:/usr/local/sbin:/usr/sbin:/sbin:$PATH
-    ;;
-esac
-export EDITOR=vim
-export LESS="-IM -x 4"
-if which vimpager > /dev/null 2>&1; then
-    export PAGER=vimpager
-fi
-export TIME_STYLE=long-iso
-export TERM=xterm-256color
 
 #-------------------------------------------------------------------------------
 # local settings
