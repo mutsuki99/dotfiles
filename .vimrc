@@ -75,5 +75,4 @@ filetype plugin indent on     " Required!
 NeoBundleCheck
 
 " 分割した設定ファイルをすべて読み込む
-set runtimepath+=~/.vim/
 runtime! user/*.vim
