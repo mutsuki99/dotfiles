@@ -92,6 +92,9 @@ esac
 #-------------------------------------------------------------------------------
 # zsh options.
 #-------------------------------------------------------------------------------
+# local comp func
+[ -d ~/local/zsh/functions ] && fpath=(~/local/zsh/functions $fpath)
+# load
 autoload -U compinit
 if [ "$OSTYPE" = "cygwin" ]; then
     compinit -u
@@ -263,7 +266,6 @@ compdef _mercurial hg shg
 # local settings
 #-------------------------------------------------------------------------------
 # load local functions
-[ -d ~/local/zsh/functions ] && fpath=(~/local/zsh/functions $fpath)
 [ -r ~/.zsh.functions ] && source ~/.zsh.functions
 
 # Over write settings
