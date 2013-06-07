@@ -45,6 +45,7 @@ NeoBundle 'scrooloose/nerdcommenter.git'
 NeoBundle 'rkitover/vimpager'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'sudo.vim'
 
 " colorscheme
 " NeoBundle 'altercation/vim-colors-solarized'
