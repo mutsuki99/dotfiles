@@ -55,6 +55,11 @@ else
   echo "'$neobundle_path' already exists."
 fi
 
+# install vimpager and vimcat
+mkdir -p ~/local/bin
+[ -x .vim/bundle/vimpager/vimpager -a ! -e ~/local/bin/vimpager ] && ln -s .vim/bundle/vimpager/vimpager ~/local/bin/.
+[ -x .vim/bundle/vimpager/vimcat -a ! -e ~/local/bin/vimcat ] && ln -s .vim/bundle/vimpager/vimcat ~/local/bin/.
+
 # copy git config
 [ -d gitconfig ] || { echo skip copy gitconfig; exit; }
 cd gitconfig
