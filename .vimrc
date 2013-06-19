@@ -64,9 +64,9 @@ NeoBundle 'nginx.vim'
 NeoBundle 'mutsuki99/molokai'
 
 " カラースキーム一覧表示に Unite.vim を使う
-NeoBundle 'ujihisa/unite-colorscheme'
+" NeoBundle 'ujihisa/unite-colorscheme'
 " 256 カラーテーブルを確認する。
-NeoBundle 'guns/xterm-color-table.vim'
+" NeoBundle 'guns/xterm-color-table.vim'
 
 
 filetype plugin indent on     " Required!
