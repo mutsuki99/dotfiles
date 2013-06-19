@@ -14,8 +14,9 @@
     pl = pull
     pr = pull --rebase
     ps = push
+    s = status
     st = status
-    sts = status
+    ss = stash
 
 [core]
     autocrlf = false
