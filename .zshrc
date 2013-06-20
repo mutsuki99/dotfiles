@@ -231,14 +231,14 @@ if which hg > /dev/null 2>&1 ; then
     fi
 fi
 # Git
-if which git > /dev/null 2>&1 ; then
-    alias gipl='git pull'
-    alias gips='git push'
-    alias gis='git status'
-    alias gic='git commit'
-    alias gia='git add'
-    alias gig='git graph'
-fi
+#if which git > /dev/null 2>&1 ; then
+#    alias gipl='git pull'
+#    alias gips='git push'
+#    alias gis='git status'
+#    alias gic='git commit'
+#    alias gia='git add'
+#    alias gig='git graph'
+#fi
 # less.sh
 if which less.sh > /dev/null 2>&1; then
     alias l='less.sh'
