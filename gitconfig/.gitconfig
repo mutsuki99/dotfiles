@@ -17,6 +17,7 @@
     s = status
     st = status
     ss = stash
+    sp = submodule foreach 'git co master && git pull'
 
 [core]
     autocrlf = false
