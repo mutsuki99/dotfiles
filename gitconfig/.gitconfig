@@ -1,43 +1,44 @@
+# vim: noet
 [user]
-    #email = 
-    #name = 
+	#email = 
+	#name = 
 
 [alias]
-    br = branch
-    ci = commit
-    cia = commit -a
-    co = checkout
-    d = diff
-    h = help
-#    gp = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %s\" --all --date=short
-    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
-    pl = pull
-    pr = pull --rebase
-    ps = push
-    s = status
-    ss = stash
-    sbp = submodule foreach 'git co master && git pull'
-    sbu = submodule update
+	br = branch
+	ci = commit
+	cia = commit -a
+	co = checkout
+	d = diff
+	h = help
+#	 gp = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %s\" --all --date=short
+	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+	pl = pull
+	pr = pull --rebase
+	ps = push
+	s = status
+	ss = stash
+	sbp = submodule foreach 'git co master && git pull'
+	sbu = submodule update
 
 [core]
-    autocrlf = false
-    editor = vim
-    excludesfile = ~/.gitignore
-    #pager = vimcat
-    #pager = vimpager
-    pager = less -R
-    #pager = less.sh
-    quotepath = false
+	autocrlf = false
+	editor = vim
+	excludesfile = ~/.gitignore
+	#pager = vimcat
+	#pager = vimpager
+	pager = less -R
+	#pager = less.sh
+	quotepath = false
 
 [color]
-    branch = auto
-    diff = auto
-    grep = auto
-    interactive = auto
-    pager = true
-    showbranch = auto
-    status = auto
-    ui = auto
+	branch = auto
+	diff = auto
+	grep = auto
+	interactive = auto
+	pager = true
+	showbranch = auto
+	status = auto
+	ui = auto
 
 [help]
-    autocorrect = 10
+	autocorrect = 10
