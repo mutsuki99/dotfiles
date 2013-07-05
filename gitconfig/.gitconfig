@@ -22,7 +22,7 @@
 
 [core]
 	autocrlf = false
-	editor = vim
+	editor = vim -c \"set fenc=utf-8\"
 	excludesfile = ~/.gitignore
 	#pager = vimcat
 	#pager = vimpager
