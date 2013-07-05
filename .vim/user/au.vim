@@ -17,7 +17,7 @@ augroup vimrcEx
 augroup END
 
 if version >= 700
-	au QuickfixCmdPost make,grep,grepadd,vimgrep copen
-	au QuickfixCmdPost l* lopen
+    au QuickfixCmdPost make,grep,grepadd,vimgrep copen
+    " au QuickfixCmdPost l* lopen
 endif
 
