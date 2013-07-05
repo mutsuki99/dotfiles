@@ -15,9 +15,9 @@
     pr = pull --rebase
     ps = push
     s = status
-    st = status
     ss = stash
-    sp = submodule foreach 'git co master && git pull'
+    sbp = submodule foreach 'git co master && git pull'
+    sbu = submodule update
 
 [core]
     autocrlf = false
