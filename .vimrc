@@ -47,7 +47,6 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'sudo.vim'
 NeoBundle 'nginx.vim'
-NeoBundle 'smarty.vim'
 NeoBundle 'tpope/vim-fugitive'
 
 " colorscheme
