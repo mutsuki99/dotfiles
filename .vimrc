@@ -48,6 +48,7 @@ NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'sudo.vim'
 NeoBundle 'nginx.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'vim-scripts/Align.git'
 
 " colorscheme
 " NeoBundle 'altercation/vim-colors-solarized'
