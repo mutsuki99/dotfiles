@@ -221,7 +221,7 @@ if which hg > /dev/null 2>&1 ; then
     alias hgs='hg st'
     # need root permission
     if which sudo > /dev/null 2>&1; then
-        alias shg='sd hg'
+        alias shg='sd -E hg'
         OLDIFS=$IFS
         IFS=$'\n'
         for i in $(alias|grep '^hg'); do
@@ -234,14 +234,11 @@ if which hg > /dev/null 2>&1 ; then
 fi
 
 # Git
-#if which git > /dev/null 2>&1 ; then
-#    alias gipl='git pull'
-#    alias gips='git push'
-#    alias gis='git status'
-#    alias gic='git commit'
-#    alias gia='git add'
-#    alias gig='git graph'
-#fi
+if which git > /dev/null 2>&1 ; then
+    if which sudo > /dev/null 2>&1; then
+        sgit='sd -E git'
+    fi
+fi
 
 # less.sh
 if which less.sh > /dev/null 2>&1; then
