@@ -236,7 +236,7 @@ fi
 # Git
 if which git > /dev/null 2>&1 ; then
     if which sudo > /dev/null 2>&1; then
-        sgit='sd -E git'
+        alias sgit='sd -E git'
     fi
 fi
 
