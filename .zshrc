@@ -191,6 +191,7 @@ alias mkdir='mkdir -p'
 if which sudoedit > /dev/null 2>&1; then
     alias se='sudoedit'
 fi
+
 # Subversion
 if which svn > /dev/null 2>&1; then
     alias svs='svn st'
@@ -201,6 +202,7 @@ if which svn > /dev/null 2>&1; then
     alias svi='svn info'
     alias sva='svn add'
 fi
+
 # Mercurial
 if which hg > /dev/null 2>&1 ; then
     alias hga='hg add'
@@ -230,6 +232,7 @@ if which hg > /dev/null 2>&1 ; then
         IFS=$OLDIFS
     fi
 fi
+
 # Git
 #if which git > /dev/null 2>&1 ; then
 #    alias gipl='git pull'
@@ -239,12 +242,14 @@ fi
 #    alias gia='git add'
 #    alias gig='git graph'
 #fi
+
 # less.sh
 if which less.sh > /dev/null 2>&1; then
     alias l='less.sh'
 else
     alias l=less
 fi
+
 # tmux
 if which tmux > /dev/null 2>&1; then
     alias tmux='tmux -2'
