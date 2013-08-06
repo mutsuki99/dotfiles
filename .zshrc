@@ -188,7 +188,6 @@ alias ctags_php='ctags -R --languages=php --langmap=PHP:.php --php-types=c+i+f+d
 alias ctags_py='ctags -R --languages=python --langmap=Python:.py --python-types=c+m+f --sort=foldcase'
 alias ....='../..'
 alias mkdir='mkdir -p'
-alias vis='sd -E vim'
 if which sudoedit > /dev/null 2>&1; then
     alias se='sudoedit'
 fi
@@ -263,6 +262,23 @@ compdef _mercurial hg shg
 # 補完禁止コマンド指定
 #compdef _nothing scp
 #compdef -d scp svnadmin svn
+
+#-------------------------------------------------------------------------------
+# functions
+#-------------------------------------------------------------------------------
+## vis
+function vis() {
+    args=()
+    for i in "$@"; do
+        if [ -e "$i" ]; then
+            args[$(( $#args + 1))]="sudo:$i"
+        else
+            args[$(( $#args + 1))]="$i"
+        fi
+    done
+
+    command vim $args
+}
 
 #-------------------------------------------------------------------------------
 # local settings
