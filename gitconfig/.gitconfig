@@ -43,4 +43,4 @@
 	ui = auto
 
 [help]
-	autocorrect = 10
+	autocorrect = 30
