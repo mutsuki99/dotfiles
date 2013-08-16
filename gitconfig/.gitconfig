@@ -9,6 +9,7 @@
 	cia = commit -a
 	co  = checkout
 	d   = diff
+	dw  = diff --word-diff=color
 	h   = help
 #	 gp = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %s\" --all --date=short
 	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
