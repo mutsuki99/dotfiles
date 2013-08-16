@@ -1,8 +1,4 @@
 # vim: noet
-[user]
-	#email = 
-	#name = 
-
 [alias]
 	br  = branch
 	ci  = commit
@@ -44,3 +40,6 @@
 
 [help]
 	autocorrect = 30
+
+[include]
+	path = ~/.gitconfig.local

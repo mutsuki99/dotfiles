@@ -65,12 +65,12 @@ mkdir -p ~/local/bin
 cd gitconfig
 for i in $(/bin/ls -dA .*); do
   isGitConfigFiles "$i" || continue
-  echo "copy '$i'."
+  echo "create symbolic link '$i'."
   if [ -e "$HOME/$i" ]; then
     echo "'$HOME/$i' already exists."
     continue
   fi
-  cp -a "$PWD/$i" "$HOME/."
+  ln -s "$PWD/$i" "$HOME/."
 done
 cd ..
 
