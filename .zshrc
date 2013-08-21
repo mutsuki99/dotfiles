@@ -238,6 +238,10 @@ if which git > /dev/null 2>&1 ; then
     if which sudo > /dev/null 2>&1; then
         alias sgit='sd -E git'
     fi
+    function git-root() {
+        cd ./$(git rev-parse --show-cdup)
+    }
+    alias cdgitroot=git-root
 fi
 
 # less.sh
