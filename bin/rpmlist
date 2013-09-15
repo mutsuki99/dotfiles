@@ -1,4 +1,9 @@
 #!/bin/bash
 
 echo -e "Name\tVersion\tRelease\tArch\tDistribution\tVendor\tPackager\n"
-rpm -qa --qf "%{Name}\t%{Version}\t%{Release}\t%{ARCH}\t%{DISTRIBUTION}\t%{Vendor}\t%{Packager}\n" | sort -f
+if [ -n "$1" ]; then
+    rpm -qa --qf "%{Name}\t%{Version}\t%{Release}\t%{ARCH}\t%{DISTRIBUTION}\t%{Vendor}\t%{Packager}\n" | sort -f | grep -E "$1"
+else
+    rpm -qa --qf "%{Name}\t%{Version}\t%{Release}\t%{ARCH}\t%{DISTRIBUTION}\t%{Vendor}\t%{Packager}\n" | sort -f
+fi
+
