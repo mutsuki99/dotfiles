@@ -262,6 +262,11 @@ if which tmux > /dev/null 2>&1; then
     alias tmatc='tmux attach -t'
 fi
 
+# etckeeper
+if which etckeeper > /dev/null 2>&1; then
+    alias sekc='sudo -E etckeeper commit'
+fi
+
 
 #-------------------------------------------------------------------------------
 # 補完設定追加
