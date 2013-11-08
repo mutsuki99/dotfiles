@@ -169,7 +169,11 @@ bindkey "^W" vi-backward-kill-word
 #-------------------------------------------------------------------------------
 # alias
 #-------------------------------------------------------------------------------
-alias diff='diff -u'
+if which colordiff > /dev/null 2>&1; then
+    alias diff='colordiff -u'
+else
+    alias diff='diff -u'
+fi
 alias ls='ls --color=auto -F'
 alias la='ls -a'
 alias lla='ls -al'
