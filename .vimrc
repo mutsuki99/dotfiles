@@ -49,6 +49,7 @@ NeoBundle 'sudo.vim'
 NeoBundle 'nginx.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'vim-scripts/Align.git'
+NeoBundle 'gregsexton/gitv.git'
 
 " colorscheme
 " NeoBundle 'altercation/vim-colors-solarized'
