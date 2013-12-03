@@ -32,6 +32,7 @@ export EDITOR=vim
 export LESS="-IM -x 4"
 if which vimpager > /dev/null 2>&1; then
     export PAGER=vimpager
+    alias vp=vimpager
 fi
 export TIME_STYLE=long-iso
 export TERM=xterm-256color
