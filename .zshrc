@@ -175,6 +175,7 @@ if which colordiff > /dev/null 2>&1; then
 else
     alias diff='diff -u'
 fi
+alias d='diff'
 alias ls='ls --color=auto -F'
 alias la='ls -a'
 alias lla='ls -al'
