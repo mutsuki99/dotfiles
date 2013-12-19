@@ -1,0 +1,67 @@
+#
+# .zshrc is sourced in interactive shells.
+# It should contain commands to set up aliases,
+# functions, options, key bindings, etc.
+#
+
+# 補完だけ強化したシンプル版。布教かこっそり入れるのに使う。
+
+PROMPT='[%n@%m]%~%# '    # Redhat EL default prompt
+
+bindkey -e
+
+autoload -U compinit
+compinit
+
+#allow tab completion in the middle of a word
+setopt COMPLETE_IN_WORD
+
+autoload -U colors
+colors
+
+setopt auto_cd pushd_ignore_dups hist_ignore_space
+setopt auto_list auto_pushd extended_glob
+setopt hist_expand pushd_to_home inc_append_history
+setopt hist_ignore_all_dups hist_verify
+setopt pushd_minus
+
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000000
+SAVEHIST=10000000
+
+setopt share_history
+setopt correct
+setopt list_packed
+setopt multios
+setopt noautoremoveslash
+setopt complete_aliases
+setopt completealiases
+
+zstyle ':completion:*' list-colors ''
+
+# 履歴検索のショートカット
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+#bindkey "^F" vi-forward-word
+#bindkey "^B" vi-backward-word
+#bindkey "^W" vi-backward-kill-word
+
+#export EDITOR=vim
+#export LESS="-IM -x 4"
+#export TIME_STYLE=long-iso
+
+# load local functions
+if [ -r ~/.functions ]; then
+        source ~/.functions
+fi
+
+# Over write settings
+if [ -r ~/.localrc ]; then
+        source ~/.localrc
+fi
