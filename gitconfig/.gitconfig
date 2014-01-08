@@ -31,6 +31,9 @@
 	#pager = less.sh
 	quotepath = false
 
+[pager]
+	stash = false
+
 [color]
 	branch = auto
 	diff = auto
