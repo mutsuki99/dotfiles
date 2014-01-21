@@ -7,7 +7,7 @@ which git > /dev/null 2>&1 || { echo 'please install git.' 1>&2; exit 1; }
 # functions
 function isIgnoreFile () {
   case "$1" in
-    .|..|.git|.gitmodules|.gitignore|.*swp)
+    .|..|.git|.gitmodules|.gitignore|.zshrc.simple|.*swp)
       return 0 ;;
     *)
       return 1 ;;
