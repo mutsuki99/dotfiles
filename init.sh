@@ -71,6 +71,9 @@ for i in $(/bin/ls -dA .*); do
     continue
   fi
   ln -s "$PWD/$i" "$HOME/."
+
+  # .gitconfig.local だけはコピー。
+  [ -e "$HOME/.gitconfig.local" ] || cp -a "$PWD/.gitconfig.local.sample" "$HOME/.gitconfig.local"
 done
 cd ..
 
