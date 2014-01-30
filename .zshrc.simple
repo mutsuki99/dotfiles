@@ -57,11 +57,8 @@ bindkey "^N" history-beginning-search-forward-end
 #export TIME_STYLE=long-iso
 
 # load local functions
-if [ -r ~/.functions ]; then
-        source ~/.functions
-fi
+[ -r ~/.zsh.functions ] && source ~/.zsh.functions
 
 # Over write settings
-if [ -r ~/.localrc ]; then
-        source ~/.localrc
-fi
+[ -r ~/.zshrc.local ] && source ~/.zshrc.local
+
