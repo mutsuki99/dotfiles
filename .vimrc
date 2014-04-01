@@ -1,8 +1,10 @@
-" Shougo/neobundle.vim · GitHub
+" Shougo/neobundle.vim - GitHub
 " https://github.com/Shougo/neobundle.vim
 " Vim-users.jp - Hack #238: neobundle.vim で plugin をモダンに管理する
 " http://vim-users.jp/2011/10/hack238/
 set nocompatible               " Be iMproved
+
+let s:is_windows = has('win32') || has('win64')
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -15,7 +17,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-NeoBundle 'Shougo/vimproc'
+if !s:is_windows
+  NeoBundle 'Shougo/vimproc'
+endif
 
 " " My Bundles here:
 " "
@@ -83,4 +87,6 @@ filetype plugin indent on     " Required!
 NeoBundleCheck
 
 " 分割した設定ファイルをすべて読み込む
+" 注意！ color など GUI に関わる部分は .gvimrc に書かないと読まれない。
 runtime! user/*.vim
+
