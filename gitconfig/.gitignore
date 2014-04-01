@@ -1,1 +1,4 @@
+# vim swap
 *.swp
+# vim undofile
+*~
