@@ -75,6 +75,12 @@ NeoBundle 'mutsuki99/molokai'
 " 256 カラーテーブルを確認する。
 " NeoBundle 'guns/xterm-color-table.vim'
 
+" Mac + tmux 用に入れたが、別に他でも使えそう。
+" if has('gui_macvim') && has('kaoriya')
+"   NeoBundle 'kana/vim-fakeclip.git'
+" endif
+NeoBundle 'kana/vim-fakeclip.git'
+
 
 filetype plugin indent on     " Required!
 "
@@ -89,4 +95,5 @@ NeoBundleCheck
 " 分割した設定ファイルをすべて読み込む
 " 注意！ color など GUI に関わる部分は .gvimrc に書かないと読まれない。
 runtime! user/*.vim
+
 
