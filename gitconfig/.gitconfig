@@ -32,6 +32,9 @@
 	#pager = less.sh
 	quotepath = false
 
+[push]
+	default = current
+
 [pager]
 	stash = false
 
