@@ -94,6 +94,7 @@ esac
 # zsh options.
 #-------------------------------------------------------------------------------
 # local comp func
+fpath=(~/local/zsh/zsh-completions/src $fpath)
 [ -d ~/local/zsh/functions ] && fpath=(~/local/zsh/functions $fpath)
 # load
 autoload -U compinit

@@ -48,11 +48,12 @@ done
 
 # run NeoBundleInstall
 neobundle_path="$HOME/.vim/bundle/neobundle.vim"
+git submodule init && git submodule update
 if [ ! -e "$neobundle_path" ] ; then
-  git clone https://github.com/Shougo/neobundle.vim.git "$neobundle_path"
+#   git clone https://github.com/Shougo/neobundle.vim.git "$neobundle_path"
   which vim > /dev/null 2>&1 && vim +NeoBundleInstall +qa
-else
-  echo "'$neobundle_path' already exists."
+# else
+#   echo "'$neobundle_path' already exists."
 fi
 
 # install vimpager and vimcat
@@ -92,3 +93,9 @@ for i in $(/bin/ls -dA .*); do
 done
 cd ..
 
+# link zsh-completions
+if [ ! -e ~/local/zsh/zsh-completions ]; then
+  mkdir -p ~/local/zsh
+  ln -s "$PWD/modules/zsh-completions" ~/local/zsh/.
+  [ $? -eq 0 ] && echo "create symbolic link '~/local/zsh/zsh-completions'."
+fi
