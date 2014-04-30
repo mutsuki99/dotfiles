@@ -100,3 +100,15 @@ if [ ! -e ~/local/zsh/zsh-completions ]; then
   ln -s "$PWD/modules/zsh-completions" ~/local/zsh/.
   [ $? -eq 0 ] && echo "create symbolic link '~/local/zsh/zsh-completions'."
 fi
+
+# link git tools
+if [ ! -e ~/local/bin/diff-highlight ]; then
+  ln -s "$PWD/modules/git/contrib/diff-highlight/diff-highlight" ~/local/bin
+  [ $? -eq 0 ] && echo "create symbolic link diff-highlight."
+fi
+if [ ! -e ~/local/zsh/functions/_git ]; then
+  ln -s "$PWD/modules/git/contrib/completion/git-completion.bash" ~/local/zsh/functions/.
+  [ $? -eq 0 ] && echo "create symbolic link git-completion.bash."
+  ln -s "$PWD/modules/git/contrib/completion/git-completion.zsh" ~/local/zsh/functions/_git
+  [ $? -eq 0 ] && echo "create symbolic link git-completion.zsh to _git"
+fi
