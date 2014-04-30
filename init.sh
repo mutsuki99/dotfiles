@@ -47,8 +47,9 @@ for i in $(/bin/ls -dA .*); do
 done
 
 # run NeoBundleInstall
-neobundle_path="$HOME/.vim/bundle/neobundle.vim"
 git submodule init && git submodule update
+neobundle_path="$HOME/.vim/bundle/neobundle.vim"
+mkdir -p "$(dirname "$neobundle_path")"
 if [ ! -e "$neobundle_path" ] ; then
 #   git clone https://github.com/Shougo/neobundle.vim.git "$neobundle_path"
   which vim > /dev/null 2>&1 && vim +NeoBundleInstall +qa
