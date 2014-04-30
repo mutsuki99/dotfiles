@@ -106,6 +106,7 @@ if [ ! -e ~/local/bin/diff-highlight ]; then
   [ $? -eq 0 ] && echo "create symbolic link diff-highlight."
 fi
 if [ ! -e ~/local/zsh/functions/_git ]; then
+  mkdir -p ~/local/zsh/functions
   ln -s "$PWD/modules/git/contrib/completion/git-completion.bash" ~/local/zsh/functions/.
   [ $? -eq 0 ] && echo "create symbolic link git-completion.bash."
   ln -s "$PWD/modules/git/contrib/completion/git-completion.zsh" ~/local/zsh/functions/_git
