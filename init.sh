@@ -38,12 +38,12 @@ cd $(dirname "$0")
 # link dotfiles
 for i in $(/bin/ls -dA .*); do
   isIgnoreFile "$i" && continue
-  echo "create symbolic link '$i'."
   if [ -e "$HOME/$i" ]; then
     echo "'$HOME/$i' already exists."
     continue
   fi
   ln -s "$PWD/$i" "$HOME/."
+  [ $? -eq 0 ] && echo "create symbolic link '$i'."
 done
 
 # run NeoBundleInstall
@@ -67,13 +67,12 @@ mkdir -p ~/local/bin
 cd gitconfig
 for i in $(/bin/ls -dA .*); do
   isGitConfigFiles "$i" || continue
-  echo "create symbolic link '$i'."
   if [ -e "$HOME/$i" ]; then
     echo "'$HOME/$i' already exists."
     continue
   fi
   ln -s "$PWD/$i" "$HOME/."
-
+  [ $? -eq 0 ] && echo "create symbolic link '$i'."
 done
 # .gitconfig.local だけはコピー。
 [ -e "$HOME/.gitconfig.local" ] || cp -a "$PWD/.gitconfig.local.sample" "$HOME/.gitconfig.local"
@@ -85,12 +84,12 @@ cd ..
 cd hgconfig
 for i in $(/bin/ls -dA .*); do
   isMercurialConfigFiles "$i" || continue
-  echo "copy '$i'."
   if [ -e "$HOME/$i" ]; then
     echo "'$HOME/$i' already exists."
     continue
   fi
   cp -a "$PWD/$i" "$HOME/."
+  [ $? -eq 0 ] && echo "copy '$i'."
 done
 cd ..
 
