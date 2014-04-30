@@ -1,3 +1,4 @@
+" vim: ts=2 sts=2 sw=2 et
 "---------------------------------------------------------------------------
 " Color
 
@@ -8,7 +9,9 @@ colorscheme molokai
 "---------------------------------------------------------------------------
 " Font, Size
 
-set guifont=Migu_2M:h10:cSHIFTJIS
+if has('win32')
+  set guifont=Migu_2M:h10:cSHIFTJIS
+endif
 set lines=58
 set columns=150
 

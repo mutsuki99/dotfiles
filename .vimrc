@@ -81,6 +81,9 @@ NeoBundle 'mutsuki99/molokai'
 " endif
 NeoBundle 'kana/vim-fakeclip.git'
 
+" Powerline
+" NeoBundle 'alpaca-tc/alpaca_powertabline'
+" NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 
 filetype plugin indent on     " Required!
 "
