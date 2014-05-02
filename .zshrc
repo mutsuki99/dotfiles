@@ -29,7 +29,7 @@ case ${UID} in
     ;;
 esac
 export EDITOR=vim
-export LESS="-IM -x 4"
+export LESS="-IM -x 4 -R"
 if which vimpager > /dev/null 2>&1; then
     export PAGER=vimpager
     alias vp=vimpager
