@@ -4,6 +4,7 @@
 # functions, options, key bindings, etc.
 #
 bindkey -e
+typeset -U path cdpath fpath manpath
 
 # 2007.11.8 shino add
 # ログイン時 screen 対策
