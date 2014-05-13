@@ -14,3 +14,6 @@ if version >= 700
 	set listchars=eol:<,tab:>-,trail:_,extends:-,precedes:<,nbsp:%
 endif
 
+if version >= 704
+	set noudf
+endif
