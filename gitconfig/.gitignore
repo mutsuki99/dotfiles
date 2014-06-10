@@ -2,4 +2,9 @@
 *.swp
 # vim undofile
 *~
+
+# Syntastic
+.syntastic_javac_config
+
+# Mac file
 .DS_Store

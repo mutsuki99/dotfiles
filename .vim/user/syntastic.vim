@@ -9,3 +9,6 @@ let g:syntastic_php_php_args = '-l'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+" Java
+let g:syntastic_java_javac_config_file_enabled = 1
