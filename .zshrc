@@ -113,12 +113,6 @@ setopt COMPLETE_IN_WORD
 ## restart running processes on exit
 #setopt HUP
 
-## history
-#setopt APPEND_HISTORY
-## for sharing history between zsh processes
-#setopt INC_APPEND_HISTORY
-#setopt SHARE_HISTORY
-
 ## never ever beep ever
 #setopt NO_BEEP
 
@@ -130,7 +124,7 @@ setopt COMPLETE_IN_WORD
 
 setopt auto_cd pushd_ignore_dups hist_ignore_space
 setopt auto_list auto_pushd extended_glob
-setopt hist_expand pushd_to_home inc_append_history
+setopt hist_expand pushd_to_home append_history inc_append_history share_history
 setopt hist_ignore_all_dups hist_verify
 setopt pushd_minus
 
@@ -141,7 +135,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=100000000
 SAVEHIST=100000000
 
-setopt share_history
 setopt correct
 setopt list_packed
 setopt multios
