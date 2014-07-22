@@ -18,7 +18,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 if !s:is_windows
-  NeoBundle 'Shougo/vimproc'
+  NeoBundle 'Shougo/vimproc', {
     \ 'build' : {
     \     'windows' : 'tools\\update-dll-mingw',
     \     'cygwin' : 'make -f make_cygwin.mak',
