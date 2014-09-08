@@ -1,4 +1,4 @@
-set history=100000		" keep 50 lines of command line history
+set history=10000		" keep 50 lines of command line history
 set cwh=20
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
