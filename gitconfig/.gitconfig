@@ -6,11 +6,10 @@
 	co  = checkout
 	d   = diff
 	dw  = diff --word-diff=color
-	fetch = fetch -p
 	h   = help
 #	 gp = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %s\" --all --date=short
 	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %Cblue%ad [%an]%Creset %Cgreen%d%Creset %s\" --all --date=iso
-	pl  = pull -p
+	pl  = pull
 	pr  = pull --rebase
 	ps  = push
 	s   = status -sb
@@ -31,6 +30,9 @@
 	pager = less -R
 	#pager = less.sh
 	quotepath = false
+
+[fetch]
+	prune = true
 
 [push]
 	default = current
