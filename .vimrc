@@ -13,7 +13,6 @@ endif
 " Let NeoBundle manage NeoBundle
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
 
 " Recommended to install
@@ -101,6 +100,8 @@ filetype plugin indent on     " Required!
 " :NeoBundleList          - list configured bundles
 " :NeoBundleInstall(!)    - install(update) bundles
 " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+call neobundle#end()
 
 " Installation check.
 NeoBundleCheck
