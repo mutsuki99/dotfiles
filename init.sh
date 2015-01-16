@@ -50,12 +50,7 @@ done
 git submodule init && git submodule update
 neobundle_path="$HOME/.vim/bundle/neobundle.vim"
 mkdir -p "$(dirname "$neobundle_path")"
-if [ ! -e "$neobundle_path" ] ; then
-#   git clone https://github.com/Shougo/neobundle.vim.git "$neobundle_path"
-  which vim > /dev/null 2>&1 && vim +NeoBundleInstall +qa
-# else
-#   echo "'$neobundle_path' already exists."
-fi
+which vim > /dev/null 2>&1 && vim +NeoBundleInstall +qa
 
 # install vimpager and vimcat
 mkdir -p ~/local/bin
