@@ -19,7 +19,7 @@
 	ssl = stash list
 	ssp = stash pop
 	sbp = submodule foreach 'git co master && git pull'
-	sbu = submodule update
+	sbu = submodule update --init --recursive
 
 [core]
 	autocrlf = false
