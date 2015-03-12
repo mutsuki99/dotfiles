@@ -1,6 +1,7 @@
 # vim: noet
 [alias]
 	br  = branch
+	bra = branch -a
 	ci  = commit
 	cia = commit -a
 	co  = checkout
