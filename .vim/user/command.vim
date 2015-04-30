@@ -1,6 +1,6 @@
 "-- command --
 " Reset tab width.
-com -nargs=1 T :set ts=<args> sts=<args> sw=<args>
+com -nargs=1 T :setlocal ts=<args> sts=<args> sw=<args>
 
 " Vim-users.jp - Hack #78: CSVの特定のカラムをハイライトする
 " http://vim-users.jp/2009/09/hack78/
