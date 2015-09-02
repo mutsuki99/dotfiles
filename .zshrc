@@ -273,6 +273,7 @@ fi
 ## compdef
 compdef _sudo sd sdh
 compdef _mercurial hg shg
+compdef _grep rgrep
 # 補完禁止コマンド指定
 #compdef _nothing scp
 #compdef -d scp svnadmin svn
