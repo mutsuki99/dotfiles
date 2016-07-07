@@ -21,11 +21,12 @@
 	ssp = stash pop
 	sbp = submodule foreach 'git co master && git pull'
 	sbu = submodule update --init --recursive
+	dis = "! f() { git diff $@ | iconv -f shift_jis;};f"
 
 [core]
 	autocrlf = false
 	editor = vim -c \"set fenc=utf-8\"
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore.local
 	#pager = vimcat
 	#pager = vimpager
 	pager = less -R
