@@ -59,7 +59,7 @@ mkdir -p ~/local/bin
 
 # copy git config
 [ -d gitconfig ] || { echo skip copy gitconfig; exit; }
-cd gitconfig
+pushd gitconfig
 for i in $(/bin/ls -dA .*); do
   isGitConfigFiles "$i" || continue
   if [ -e "$HOME/$i" ]; then
@@ -72,11 +72,11 @@ done
 # .gitconfig.local だけはコピー。
 [ -e "$HOME/.gitconfig.local" ] || cp -a "$PWD/.gitconfig.local.sample" "$HOME/.gitconfig.local"
 
-cd ..
+popd
 
 # copy hg config
 [ -d hgconfig ] || { echo skip copy hgconfig; exit; }
-cd hgconfig
+pushd hgconfig
 for i in $(/bin/ls -dA .*); do
   isMercurialConfigFiles "$i" || continue
   if [ -e "$HOME/$i" ]; then
@@ -86,7 +86,7 @@ for i in $(/bin/ls -dA .*); do
   cp -a "$PWD/$i" "$HOME/."
   [ $? -eq 0 ] && echo "copy '$i'."
 done
-cd ..
+popd
 
 # link zsh-completions
 if [ ! -e ~/local/zsh/zsh-completions ]; then
