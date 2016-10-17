@@ -1,9 +1,9 @@
 # vim: noet
 [alias]
 	br	= branch
-	bra = branch -a
+	bra	= branch -a
 	ci	= commit
-	cia = commit -a
+	cia	= commit -a
 	co	= checkout
 	d	= diff
 	dc	= diff --cached
@@ -18,12 +18,12 @@
 	s	= status -sb
 	st	= status
 	ss	= stash
-	ssc = stash clear
-	ssl = stash list
-	ssp = stash pop
-	sbp = submodule foreach 'git co master && git pull'
-	sbu = submodule update --init --recursive
-	dis = "! f() { git diff $@ | iconv -f shift_jis;};f"
+	ssc	= stash clear
+	ssl	= stash list
+	ssp	= stash pop
+	sbp	= submodule foreach 'git co master && git pull'
+	sbu	= submodule update --init --recursive
+	dis	= "! f() { git diff $@ | iconv -f shift_jis;};f"
 
 [core]
 	autocrlf = false
