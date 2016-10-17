@@ -10,3 +10,15 @@ Windows で color 読めなくて焦る。
 
 gvim って ~/vimfiles 必須だったっけ？
 →  ~/.vim で平気。読めないんじゃなくて、一部 GUI 関連設定値が .gvimrc から読まないとダメだっただけ。
+
+
+
+README とちょっと違うのでやっぱりこっちに追記。
+Windows symlink 作るよ。要 Admin とか酷いけどめげずに頑張る。
+
+> cd %USERPROFILE%\git\mutsuki99\dotfiles
+> mklink %USERPROFILE%\.gitconfig %CD%\gitconfig\.gitconfig
+> mklink %USERPROFILE%\_gvimirc %CD%\gitconfig\.gvimrc
+> mklink %USERPROFILE%\_vimirc %CD%\gitconfig\.vimrc
+
+> mklink /D %USERPROFILE%\vimfiles %CD%\gitconfig\.vim
