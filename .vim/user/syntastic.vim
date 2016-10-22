@@ -18,6 +18,7 @@ let g:syntastic_java_javac_config_file_enabled = 1
 if executable('rubocop')
   " let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
   let g:syntastic_ruby_checkers = ['rubocop']
+  let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 endif
 
 " Python
