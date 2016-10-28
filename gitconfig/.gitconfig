@@ -63,3 +63,4 @@
 	ff = false
 [pull]
 	ff = only
+	prune = true
