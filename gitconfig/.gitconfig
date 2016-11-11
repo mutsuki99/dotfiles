@@ -65,3 +65,5 @@
 [pull]
 	ff = only
 	prune = true
+[diff]
+	renames = true
