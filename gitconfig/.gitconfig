@@ -14,6 +14,8 @@
 	graph = log --graph --date-order -C -M --pretty=format:\"%C(yellow)%h %C(cyan)%ad %C(green)[%an]%Creset %C(reverse green)%d%Creset %s\" --all --date=iso
 	g	= log --graph --date-order -C -M --pretty=format:\"%C(yellow)%h %C(cyan)%ad %C(green)[%an]%Creset %C(reverse green)%d%Creset %s\" --all --date=iso
 	l = log --stat=300 --decorate=short --pretty=format:'%C(yellow)%h %C(cyan)%ar %Cgreen%an %Cred%d%Creset %s %C(blue)%b'
+	lp	= log -p --stat=300 --decorate=short --pretty=format:'%C(yellow)%h %C(cyan)%ar %Cgreen%an %Cred%d%Creset %s %C(blue)%b'
+	lpw	= log --color-words -p --stat=300 --decorate=short --pretty=format:'%C(yellow)%h %C(cyan)%ar %Cgreen%an %Cred%d%Creset %s %C(blue)%b'
 	pl	= pull
 	pr	= pull --rebase
 	ps	= push
