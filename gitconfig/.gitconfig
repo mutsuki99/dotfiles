@@ -1,5 +1,6 @@
 # vim: noet
 [alias]
+	amend = commit --amend
 	br	= branch
 	bra	= branch -a
 	ci	= commit
