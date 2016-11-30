@@ -9,6 +9,7 @@
 	d	= diff
 	dc	= diff --cached
 	dw	= diff --word-diff=color
+	f	= fetch
 	h	= help
 #	 gp = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %s\" --all --date=short
 	graph = log --graph --date-order -C -M --pretty=format:\"%C(yellow)%h %C(cyan)%ad %C(green)[%an]%Creset %C(reverse green)%d%Creset %s\" --all --date=iso
