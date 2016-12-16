@@ -172,6 +172,7 @@ else
     alias diff='diff -u'
 fi
 alias d='diff'
+alias dh=diff-highlight
 alias ls='ls --color=auto -F'
 alias la='ls -a'
 alias lla='ls -al'
