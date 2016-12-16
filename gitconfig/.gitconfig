@@ -71,3 +71,5 @@
 	prune = true
 [diff]
 	renames = true
+	compactionHeuristic = true
+	indentHeuristic = true
