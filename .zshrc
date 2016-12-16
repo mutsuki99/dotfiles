@@ -261,6 +261,7 @@ if which tmux > /dev/null 2>&1; then
     alias tmux='tmux -2'
     alias tmls='tmux ls'
     alias tmatc='tmux attach -t'
+    alias tmcs='tmux choose-session'
 fi
 
 # etckeeper
