@@ -10,15 +10,19 @@ Windows で color 読めなくて焦る。
 
 gvim って ~/vimfiles 必須だったっけ？
 →  ~/.vim で平気。読めないんじゃなくて、一部 GUI 関連設定値が .gvimrc から読まないとダメだっただけ。
+    追記:   今の設定では ~/.vim も ~/vimfiles も両方必要という困った状態。
+            Neobundler は ~/.vim から読んで、その他の設定が ~/vimfiles から読み込まれる。（重複実行はないことを確認）
+            TODO として残す必要あり。
 
 
-
-README とちょっと違うのでやっぱりこっちに追記。
-Windows symlink 作るよ。要 Admin とか酷いけどめげずに頑張る。
+Windows で git と gvim に必要な symlink 作るコマンド例はこちら。
 
 > cd %USERPROFILE%\git\mutsuki99\dotfiles
-> mklink %USERPROFILE%\.gitconfig %CD%\gitconfig\.gitconfig
-> mklink %USERPROFILE%\_gvimirc %CD%\gitconfig\.gvimrc
-> mklink %USERPROFILE%\_vimirc %CD%\gitconfig\.vimrc
 
-> mklink /D %USERPROFILE%\vimfiles %CD%\gitconfig\.vim
+> mklink %USERPROFILE%\_gvimrc %CD%\.gvimrc
+> mklink %USERPROFILE%\_vimirc %CD%\.vimrc
+> mklink /D %USERPROFILE%\.vim %CD%\.vim
+> mklink /D %USERPROFILE%\vimfiles %CD%\.vim
+
+> mklink %USERPROFILE%\.gitconfig %CD%\gitconfig\.gitconfig
+> mklink %USERPROFILE%\.gitignore %CD%\gitconfig\.gitignore
