@@ -4,7 +4,7 @@
 	br	= branch
 	bra	= branch -a
 	ci	= commit
-	cia	= commit -a
+	cia	= commit --amend
 	co	= checkout
 	d	= diff
 	dc	= diff --cached
