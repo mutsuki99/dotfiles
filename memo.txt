@@ -15,12 +15,15 @@ gvim って ~/vimfiles 必須だったっけ？
             TODO として残す必要あり。
 
 
-Windows で git と gvim に必要な symlink 作るコマンド例はこちら。
+Windows で git と gvim に必要な symlink 作るコマンド例はこちらe
+もしかしたら 7.4 から _vimrc 見なくなったかも。.vimrc おかないと読んでくれない。（ただし _gvimrc は必要。よくわかんね。）
 
 > cd %USERPROFILE%\git\mutsuki99\dotfiles
 
 > mklink %USERPROFILE%\_gvimrc %CD%\.gvimrc
 > mklink %USERPROFILE%\_vimirc %CD%\.vimrc
+> mklink %USERPROFILE%\.vimirc %CD%\.vimrc
+
 > mklink /D %USERPROFILE%\.vim %CD%\.vim
 > mklink /D %USERPROFILE%\vimfiles %CD%\.vim
 
