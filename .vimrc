@@ -66,6 +66,7 @@ NeoBundle 'PProvost/vim-ps1'
 NeoBundle 'kamichidu/vim-edit-properties.git'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'elzr/vim-json'
+NeoBundle 'fatih/vim-go'
 
 " colorscheme
 " NeoBundle 'altercation/vim-colors-solarized'
