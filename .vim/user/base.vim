@@ -17,3 +17,6 @@ endif
 if version >= 704
 	set noudf
 endif
+
+" vim-json 等でダブルクォートが表示されない場合の対策。
+let g:vim_json_syntax_conceal = 0
