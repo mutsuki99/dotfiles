@@ -178,6 +178,8 @@ alias la='ls -a'
 alias lla='ls -al'
 alias l.='ls -d .*'
 alias ll.='ls -ld .*'
+alias now='date +%Y%m%d_%H%M%S'
+alias now_iso8601='date --iso-8601=seconds'
 alias vi=vim
 alias view='vim -R'
 alias vw=view
