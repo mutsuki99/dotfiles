@@ -53,3 +53,5 @@ au BufNewFile,BufRead * match ZenkakuSpace /Å@/
 set guioptions+=a
 set clipboard+=unnamed
 
+" bell off
+set visualbell t_vb=
