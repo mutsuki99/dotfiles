@@ -22,7 +22,9 @@ if executable('rubocop')
 endif
 
 " Python
-if executable('pep8')
+if executable('flake8')
+  let g:syntastic_python_checkers = ['flake8']
+elseif executable('pep8')
   if executable('pyflakes')
     let g:syntastic_python_checkers = ['pyflakes', 'pep8']
   else
