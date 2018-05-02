@@ -11,3 +11,5 @@ let g:ctrlp_mruf_max = 1000
 " Enable migemo
 let g:ctrlp_use_migemo = 1
 
+" Show hidden files
+let g:ctrlp_show_hidden = 1
