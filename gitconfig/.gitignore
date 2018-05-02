@@ -1,18 +1,27 @@
 # Syntastic
 .syntastic_javac_config
 
-### https://raw.github.com/github/gitignore/c751b70cc6ec57de20f918dbf05448333ffa2191/Global/Vim.gitignore
+# pyenv virtualenv
+.python-version
 
-# swap
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-# session
+### https://raw.github.com/github/gitignore/feadffd1380cf723ff0654a802aaa77d5aa814b6/Global/Vim.gitignore
+
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+
+# Session
 Session.vim
-# temporary
+
+# Temporary
 .netrwhist
 *~
-# auto-generated tag files
+# Auto-generated tag files
 tags
+# Persistent undo
+[._]*.un~
 
 
 ### https://raw.github.com/github/gitignore/c751b70cc6ec57de20f918dbf05448333ffa2191/Global/OSX.gitignore
