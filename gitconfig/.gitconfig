@@ -10,7 +10,7 @@
 	d	= diff
 	dc	= diff --cached
 	dw	= diff --word-diff=color
-	f	= fetch
+	f	= fetch -p
 	fa	= fetch --all
 	h	= help
 #	 gp = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %s\" --all --date=short
@@ -70,7 +70,6 @@
 	ff = false
 [pull]
 	ff = only
-	prune = true
 [diff]
 	renames = true
 	compactionHeuristic = true
