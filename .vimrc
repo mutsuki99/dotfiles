@@ -70,6 +70,7 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'tweekmonster/braceless.vim'
+NeoBundle 'simeji/winresizer'
 
 " colorscheme
 " NeoBundle 'altercation/vim-colors-solarized'
