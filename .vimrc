@@ -10,6 +10,8 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+let g:neobundle#log_filename = $HOME . "/logs/neobundle.log"
+
 " Let NeoBundle manage NeoBundle
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
