@@ -21,3 +21,4 @@ if version >= 700
     " au QuickfixCmdPost l* lopen
 endif
 
+autocmd FileType python,yaml,coffee BracelessEnable +indent +fold +highlight-cc
