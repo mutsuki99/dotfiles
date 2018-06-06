@@ -69,6 +69,7 @@ NeoBundle 'kamichidu/vim-edit-properties.git'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tweekmonster/braceless.vim'
 NeoBundle 'simeji/winresizer'
 
