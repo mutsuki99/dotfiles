@@ -49,6 +49,7 @@
 	default = current
 
 [pager]
+	branch = false
 	stash = false
 
 [color]
