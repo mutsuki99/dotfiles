@@ -13,3 +13,9 @@ let g:ctrlp_use_migemo = 1
 
 " Show hidden files
 let g:ctrlp_show_hidden = 1
+
+" Ignore file and directories
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/](node_modules|vendor/bundle|\.venv|\.git|\.hg|\.serverless(|_plugins))$',
+  \ 'file': '\v\.(exe|so|dll|jpg|gif|png|sw[a-z])$',
+  \ }
