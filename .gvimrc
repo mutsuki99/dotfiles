@@ -55,3 +55,8 @@ set clipboard+=unnamed
 
 " bell off
 set visualbell t_vb=
+
+" Migemo Search
+if has("migemo")
+  set migemo
+endif
