@@ -10,7 +10,7 @@ colorscheme molokai
 " Font, Size
 
 if has('win32')
-  set guifont=Migu_2M:h10:cSHIFTJIS
+  set guifont=HackGen:h10:cSHIFTJIS
 endif
 set lines=58
 set columns=150
@@ -23,7 +23,7 @@ set fileformats=dos,unix,mac
 "---------------------------------------------------------------------------
 " àÛç¸ê›íË
 
-set pfn=MeiryoKe_Gothic:h10:cSHIFTJIS
+set pfn=HackGen:h10:cSHIFTJIS
 set popt=left:10mm,right:10mm,top:20mm,bottom:20mm,header:2
 set popt+=syntax:a,number:y,wrap:y,collate:y,jobsplit:y,formfeed:y
 
