@@ -72,6 +72,7 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tweekmonster/braceless.vim'
 NeoBundle 'simeji/winresizer'
+NeoBundle 'hashivim/vim-terraform'
 
 " colorscheme
 " NeoBundle 'altercation/vim-colors-solarized'
