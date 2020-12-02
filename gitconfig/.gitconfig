@@ -22,6 +22,7 @@
 	pl	= pull
 	pr	= pull --rebase
 	ps	= push
+	psf	= push --force-with-lease
 	s	= status -sb
 	st	= status
 	ss	= stash
